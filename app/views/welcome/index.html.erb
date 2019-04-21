@@ -1,2 +1,12 @@
-<h1>Welcome#index</h1>
-<%= link_to 'My Blog', controller: 'articles' %>
+<div class="jumbotron">
+  <h1 class="display-3"><%= @title %></h1>
+  <p class="lead"> Welcome on the final web project.</p>
+  <hr class="my-4">
+  <p>You can view articles by clicking here !</p>
+  <p class="lead">
+    <%= link_to 'View articles', controller: 'articles' %>
+  </p>
+</div>
+
+
+

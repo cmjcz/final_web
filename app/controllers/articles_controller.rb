@@ -1,8 +1,14 @@
 class ArticlesController < ApplicationController
   
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  http_basic_authenticate_with name: "user", password: "user", except: [:index, :show]
   
-  def new
+  def index
+    @title = 'Select the article to read'
+    @articles = Article.all
+  end
+
+    def new
+      @title = 'Create a new article'
     end
 
     def create
@@ -30,10 +36,6 @@ class ArticlesController < ApplicationController
 
     def show
         @article = Article.find(params[:id])
-    end
-
-    def index
-        @articles = Article.all
     end
 
     def destroy
