@@ -22,7 +22,8 @@ class ArticlesController < ApplicationController
     end
 
     def edit
-        @article = Article.find(params[:id])
+      @title = 'Edit article'
+      @article = Article.find(params[:id])
     end
 
     def update

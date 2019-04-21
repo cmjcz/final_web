@@ -1,5 +1,15 @@
-<h1>Edit article</h1>
+<div class="jumbotron">
+
+  <h1 class="display-3"><%= @title %></h1>
+
+    <%= render 'form' %>
+
+  <p class="lead">
+    <%= link_to 'Back', articles_path %>
+  </p>
+</div
+
+
  
-<%= render 'form' %>
+
  
-<%= link_to 'Back', articles_path %>

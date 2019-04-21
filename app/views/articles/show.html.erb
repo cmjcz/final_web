@@ -1,18 +1,19 @@
-<p>
-    <strong>Title:</strong>
-    <%= @article.title %>
-</p>
+<div class="jumbotron">
 
-<p>
-    <strong>Text:</strong>
+  <h1 class="display-3"><%= @article.title %></h1>
+
+  <p class="lead">
     <%= @article.text %>
-</p>
+  </p>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+  <hr class="my-4">
+    <h2>Comments</h2>
+    <%= render @article.comments %>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-
-<%= link_to 'Edit', edit_article_path(@article) %>
-<%= link_to 'Back', articles_path %>
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+  <p class="lead">
+    <%= link_to 'Edit', edit_article_path(@article) %>
+    <%= link_to 'Back', articles_path %>
+  </p>
+</div

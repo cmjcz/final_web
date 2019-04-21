@@ -16,16 +16,16 @@
    
     <p>
       <%= form.label :title %><br>
-      <%= form.text_field :title %>
+      <%= form.text_field(:title, {:class => 'form-control'}) %>
     </p>
    
     <p>
       <%= form.label :text %><br>
-      <%= form.text_area :text %>
+      <%= form.text_area(:text, {:class => 'form-control'}) %>
     </p>
    
     <p>
-      <%= form.submit %>
+      <%= form.submit({:class => 'btn btn-success'}) %>
     </p>
    
   <% end %>
