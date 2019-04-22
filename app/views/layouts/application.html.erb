@@ -22,7 +22,7 @@
         <ul class="navbar-nav mr-auto">
 
           <li class="nav-link">
-          <%= link_to "Home", home_path %>
+          <%= link_to "Accueil", home_path %>
           </li>
         
           <li class="nav-link">
@@ -30,13 +30,20 @@
           </li>
 
           <li class="nav-link">
-          <%= link_to "New Acticle", new_article_path %>
+          <%= link_to "Nouvel Acticle", new_article_path %>
           </li>
-          <li class="nav-link">
             <% if user_signed_in? %>
-              <%= current_user.email %>
+            <li class="nav-link">
+                <%= current_user.email %>
+            </li>
+            <li class="nav-link">
+               <%= link_to('Déconnexion', destroy_user_session_path, method: :delete) %> 
+            </li>
+              <% else %>
+              <li class="nav-link">
+                <%= link_to "Connexion", new_user_session_path %>
+              </li>
             <% end %>
-          </li>
 
         </ul>
 
