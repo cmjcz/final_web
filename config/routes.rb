@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   
+  resources :categories
   resources :articles do
     resources :comments
   end
