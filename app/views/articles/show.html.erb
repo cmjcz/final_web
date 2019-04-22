@@ -1,23 +1,30 @@
 <div class="jumbotron">
-
-  <h1 class="display-3"><%= @article.title %></h1>
+  <table>
+    <td width="96%">
+      <h1 class="display-3"><%= @article.title %></h1>
+    </td>
+    <td width="3%">
+      <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-secondary" %>
+    </td>
+    <td width="3%">
+      <%= link_to 'Back', articles_path , class: "btn btn-secondary" %>
+    </td>
+  </table>
+  
 
   <div align="center">
-    <%= image_tag(@article.picture, height: "300px") %>
+    <%= image_tag(@article.picture, height: "400px") %>
   </div>
 
   <p class="lead">
     <%= @article.text %>
   </p>
 
-  <hr class="my-4">
+  <hr class="my-4"> <br>
     <h2>Comments</h2>
     <%= render @article.comments %>
 
+  <hr class="my-4"> <br>
     <h2>Add a comment:</h2>
     <%= render 'comments/form' %>
-  <p class="lead">
-    <%= link_to 'Edit', edit_article_path(@article) %>
-    <%= link_to 'Back', articles_path %>
-  </p>
 </div

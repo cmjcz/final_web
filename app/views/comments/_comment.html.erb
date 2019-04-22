@@ -1,14 +1,18 @@
+
 <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-  <div class="card-header"><%= comment.commenter %></div>
+  <div class="card-header">
+    <%= comment.commenter %>
+  </div>
   <div class="card-body">
     <p class="card-text">
-    <%= comment.body %>
+      <%= comment.body %>
     </p>
+
     <p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-  </p>
+    <%= link_to 'Destroy Comment', [comment.article, comment],
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+    </p>
   </div>
 </div>
   

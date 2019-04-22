@@ -1,11 +1,11 @@
 <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
     <p>
-      <%= form.label :name %><br>
-      <%= form.text_field(:name, {:class => 'form-control'} ) %>
+      <%= form.label :commenter%><br>
+      <%= form.text_field(:commenter, {:class => 'form-control'} ) %>
     </p>
     <p>
-      <%= form.label :comment %><br>
-      <%= form.text_area(:comment, {:class => 'form-control'} ) %>
+      <%= form.label :body %><br>
+      <%= form.text_area(:body, {:class => 'form-control'} ) %>
     </p>
     <p>
       <%= form.submit({:class => 'btn btn-success'}) %>
