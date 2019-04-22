@@ -1,13 +1,17 @@
-<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
-    <p>
-      <%= form.label :commenter%><br>
-      <%= form.text_field(:commenter, {:class => 'form-control'} ) %>
-    </p>
-    <p>
-      <%= form.label :body %><br>
-      <%= form.text_area(:body, {:class => 'form-control'} ) %>
-    </p>
-    <p>
-      <%= form.submit({:class => 'btn btn-success'}) %>
-    </p>
+<% if user_signed_in? %>
+  <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+      <p>
+        <%= form.label :commenter%><br>
+        <%= form.text_field(:commenter, {:class => 'form-control'} ) %>
+      </p>
+      <p>
+        <%= form.label :body %><br>
+        <%= form.text_area(:body, {:class => 'form-control'} ) %>
+      </p>
+      <p>
+        <%= form.submit({:class => 'btn btn-success'}) %>
+      </p>
   <% end %>
+<% else %>
+  <p>Vous devez <%= link_to "vous connecter", new_user_session_path %> pour poster des commentaires.</p>
+<% end %>
