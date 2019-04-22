@@ -1,21 +1,38 @@
+<!-- CALLED IN index.html.erb AND search.html.erb -->
+
 <div class="jumbotron">
-  <h1 class="display-3"><%= @title %></h1>
-  <hr class="my-4">
-  
-        <% @articles.each do |article| %>
-          <div class="card bg-light mb-3" style="max-width: 20rem;">
-            <div class="card-header"><%= article.title %></div>
-            <div class="card-body">
-              <p class="card-text"><%= article.text %></p>
-              <%= link_to 'Show', article_path(article) %>
-              <%= link_to 'Edit', edit_article_path(article) %>
-              <%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure ?' } %>
-            </div>
-            </div>
-        <% end %>
+<table>
+    <td width="94%">
+        <h1 class="display-3"><%= @title %></h1>
+    </td>
+    <td>
+        <p class="lead">
+            <%= link_to 'New article', new_article_path, class: "btn btn-success" %>
+        </p>
+    </td>
+</table>
 
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Article</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
 
-  <p class="lead">
-    <%= link_to 'New article', new_article_path %>
-  </p>
+  <tbody>
+  <% @articles.each do |article| %>
+    <tr class="table-success">
+      <th scope="row"><%= article.title %></th>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article), class: "btn btn-outline-secondary"%></td>
+      <td><%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-secondary" %></td>
+      <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure ?' }, class: "btn btn-outline-danger" %></td>
+    </tr>
+     <% end %>
+  </tbody>
+</table> 
 </div>  
