@@ -1,0 +1,12 @@
+<p>
+    <strong>Title:</strong>
+    <%= @categorie.title %>
+</p>
+
+<p>
+    <strong>Description:</strong>
+    <%= @categorie.description %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@categorie) %>
+<%= link_to 'Back', categories_path %>
