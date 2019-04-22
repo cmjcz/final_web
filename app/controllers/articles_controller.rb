@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   
-  http_basic_authenticate_with name: "user", password: "user", except: [:index, :show, :search]
-  
+  before_action :authenticate_user!, except: [:index, :search, :show]
+
   def index
     @title = 'Select the article to read'
     @articles = Article.all
