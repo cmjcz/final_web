@@ -2,6 +2,10 @@
 
   <h1 class="display-3"><%= @article.title %></h1>
 
+  <div align="center">
+    <%= image_tag(@article.picture, height: "300px") %>
+  </div>
+
   <p class="lead">
     <%= @article.text %>
   </p>

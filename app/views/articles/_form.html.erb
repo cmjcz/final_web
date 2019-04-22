@@ -23,6 +23,11 @@
       <%= form.label :text %><br>
       <%= form.text_area(:text, {:class => 'form-control'}) %>
     </p>
+
+    <p>
+      <%= form.label :picture %><br>
+      <%= form.file_field :picture %>
+    </p>
    
     <p>
       <%= form.submit({:class => 'btn btn-success'}) %>
